@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20190728 18:20:28.124" generator="Robot 3.1.2 (Python 2.7.16 on linux2)">
+<suite source="/home/sebas/PycharmProjects/Bank/venv/bin/Suites" id="s1" name="Suites">
+<suite source="/home/sebas/PycharmProjects/Bank/venv/bin/Suites/example.robot" id="s1-s1" name="Example">
+<test id="s1-s1-t1" name="Search">
+<kw name="Search in Google">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${SERVER}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20190728 18:20:28.224" level="INFO">Opening browser 'Firefox' to base url 'https://www.google.com'.</msg>
+<status status="PASS" endtime="20190728 18:20:30.837" starttime="20190728 18:20:28.224"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20190728 18:20:30.883" starttime="20190728 18:20:30.837"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20190728 18:20:30.883" starttime="20190728 18:20:30.883"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${TEXT}</arg>
+<arg>${PYTHON}</arg>
+</arguments>
+<msg timestamp="20190728 18:20:30.884" level="INFO">Typing text 'Python' into text field 'name:q'.</msg>
+<status status="PASS" endtime="20190728 18:20:33.947" starttime="20190728 18:20:30.883"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${SEARCH}</arg>
+</arguments>
+<msg timestamp="20190728 18:20:33.949" level="INFO">Clicking element 'name:btnK'.</msg>
+<status status="PASS" endtime="20190728 18:20:37.309" starttime="20190728 18:20:33.948"></status>
+</kw>
+<status status="PASS" endtime="20190728 18:20:37.310" starttime="20190728 18:20:28.224"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20190728 18:20:38.738" starttime="20190728 18:20:37.310"></status>
+</kw>
+<status status="PASS" endtime="20190728 18:20:38.739" critical="yes" starttime="20190728 18:20:28.223"></status>
+</test>
+<doc>Robot Framework</doc>
+<status status="PASS" endtime="20190728 18:20:38.739" starttime="20190728 18:20:28.136"></status>
+</suite>
+<status status="PASS" endtime="20190728 18:20:38.740" starttime="20190728 18:20:28.125"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Suites" pass="1">Suites</stat>
+<stat fail="0" id="s1-s1" name="Example" pass="1">Suites.Example</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

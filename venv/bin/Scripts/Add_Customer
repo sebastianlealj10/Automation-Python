@@ -49,12 +49,6 @@ class AddingCustomersTestCase(unittest.TestCase):
         self.driver.quit()
 
 
-'''
-if __name__ == '__main__':
-    unittest.main()
-'''
-
-
 def suite():
     suite = unittest.TestSuite()
     suite.addTest(AddingCustomersTestCase('test_open_account'))
