@@ -12,4 +12,7 @@ class AddCustomerLocators(object):
     last_name_textbox = (By.CSS_SELECTOR, "input[ng-model='lName']")
     post_code_textbox = (By.CSS_SELECTOR, "input[ng-model='postCd']")
     submit_button = (By.CSS_SELECTOR, "button[type='submit']")
-
+    customer_button = (By.CSS_SELECTOR, "button[ng-class='btnClass2']")
+    select_user = (By.NAME, 'userSelect')
+    select_currency = (By.NAME, 'currency')
+    open_account_submit_button = (By.CSS_SELECTOR, "button[type='submit']")

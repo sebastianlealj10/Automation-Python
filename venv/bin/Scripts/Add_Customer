@@ -6,7 +6,7 @@ from Pages import Login
 from Pages import AddCustomer
 
 
-class SearchText(unittest.TestCase):
+class AddingCustomersTestCase(unittest.TestCase):
 
     def setUp(self):
         # create a new Firefox session
@@ -19,12 +19,31 @@ class SearchText(unittest.TestCase):
     def test_add_customer(self):
         login_page = Login.Login(self.driver)
         login_page.bank_manager_login()
-        add_customer_page = AddCustomer.AddCustomerPage(self.driver)
-        add_customer_page.add_customer()
-        add_customer_page.add_username()
-        add_customer_page.add_last_name()
-        add_customer_page.add_post_code()
-        add_customer_page.submit()
+        home_page = AddCustomer.AddCustomerPage(self.driver)
+        home_page.add_customer()
+        home_page.add_username()
+        home_page.add_last_name()
+        home_page.add_post_code()
+        home_page.submit()
+        home_page.customer_added_alert()
+        time.sleep(10)
+
+    def test_open_account(self):
+        login_page = Login.Login(self.driver)
+        login_page.bank_manager_login()
+        home_page = AddCustomer.AddCustomerPage(self.driver)
+        home_page.add_customer()
+        home_page.add_username()
+        home_page.add_last_name()
+        home_page.add_post_code()
+        home_page.submit()
+        home_page.customer_added_alert()
+        time.sleep(2)
+        home_page.open_account()
+        home_page.select_user()
+        home_page.select_currency()
+        home_page.submit_button()
+        home_page.customer_added_alert()
         time.sleep(10)
 
     def tearDown(self):

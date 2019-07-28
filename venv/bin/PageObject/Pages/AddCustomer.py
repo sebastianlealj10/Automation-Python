@@ -1,3 +1,7 @@
+from selenium.webdriver.common.alert import Alert
+
+from selenium.webdriver.support.ui import Select
+
 from Locators import AddCustomerLocators
 
 
@@ -30,4 +34,24 @@ class AddCustomerPage(BasePage):
 
     def submit(self):
         element = self.driver.find_element(*AddCustomerLocators.submit_button)
+        element.click()
+
+    def customer_added_alert(self):
+        self.driver.switch_to.alert
+        Alert(self.driver).accept()
+
+    def open_account(self):
+        element = self.driver.find_element(*AddCustomerLocators.customer_button)
+        element.click()
+
+    def select_user(self):
+        select = Select(self.driver.find_element(*AddCustomerLocators.select_user))
+        select.select_by_visible_text("Sebas Leal")
+
+    def select_currency(self):
+        select = Select(self.driver.find_element(*AddCustomerLocators.select_currency))
+        select.select_by_visible_text("Dollar")
+
+    def submit_button(self):
+        element = self.driver.find_element(*AddCustomerLocators.open_account_submit_button)
         element.click()
