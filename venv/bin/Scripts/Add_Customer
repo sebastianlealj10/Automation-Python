@@ -1,0 +1,36 @@
+import time
+import unittest
+
+from selenium import webdriver
+from Pages import Login
+from Pages import AddCustomer
+
+
+class SearchText(unittest.TestCase):
+
+    def setUp(self):
+        # create a new Firefox session
+        self.driver = webdriver.Firefox()
+        self.driver.implicitly_wait(30)
+        self.driver.maximize_window()
+        # navigate to the application home page
+        self.driver.get("http://www.way2automation.com/angularjs-protractor/banking/#/login")
+
+    def test_add_customer(self):
+        login_page = Login.Login(self.driver)
+        login_page.bank_manager_login()
+        add_customer_page = AddCustomer.AddCustomerPage(self.driver)
+        add_customer_page.add_customer()
+        add_customer_page.add_username()
+        add_customer_page.add_last_name()
+        add_customer_page.add_post_code()
+        add_customer_page.submit()
+        time.sleep(10)
+
+    def tearDown(self):
+        # close the browser window
+        self.driver.quit()
+
+
+if __name__ == '__main__':
+    unittest.main()
