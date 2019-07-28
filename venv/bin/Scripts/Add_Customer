@@ -15,11 +15,11 @@ class AddingCustomersTestCase(unittest.TestCase):
         self.driver.maximize_window()
         # navigate to the application home page
         self.driver.get("http://www.way2automation.com/angularjs-protractor/banking/#/login")
-
-    def test_add_customer(self):
         login_page = Login.Login(self.driver)
         login_page.bank_manager_login()
-        home_page = AddCustomer.AddCustomerPage(self.driver)
+
+    def test_add_customer(self):
+        home_page = AddCustomer.ManagerPage(self.driver)
         home_page.add_customer()
         home_page.add_username()
         home_page.add_last_name()
@@ -29,9 +29,7 @@ class AddingCustomersTestCase(unittest.TestCase):
         time.sleep(10)
 
     def test_open_account(self):
-        login_page = Login.Login(self.driver)
-        login_page.bank_manager_login()
-        home_page = AddCustomer.AddCustomerPage(self.driver)
+        home_page = AddCustomer.ManagerPage(self.driver)
         home_page.add_customer()
         home_page.add_username()
         home_page.add_last_name()
@@ -51,5 +49,18 @@ class AddingCustomersTestCase(unittest.TestCase):
         self.driver.quit()
 
 
+'''
 if __name__ == '__main__':
     unittest.main()
+'''
+
+
+def suite():
+    suite = unittest.TestSuite()
+    suite.addTest(AddingCustomersTestCase('test_open_account'))
+    return suite
+
+
+if __name__ == '__main__':
+    runner = unittest.TextTestRunner()
+    runner.run(suite())

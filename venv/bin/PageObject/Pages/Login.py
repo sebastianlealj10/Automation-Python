@@ -1,4 +1,4 @@
-from Locators import MainPageLocators
+from Locators import LoginPageLocators
 
 
 ##
@@ -19,5 +19,5 @@ class BasePage(object):
 class Login(BasePage):
 
     def bank_manager_login(self):
-        element = self.driver.find_element(*MainPageLocators.bank_manager_login)
+        element = self.driver.find_element(*LoginPageLocators.bank_manager_login)
         element.click()
